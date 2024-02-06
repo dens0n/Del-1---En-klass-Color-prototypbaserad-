@@ -10,6 +10,11 @@ body {
   align-items: center;
   justify-content: center;
 }
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 input {
   border: 2px solid black;
   font-size: 1rem;
@@ -17,4 +22,18 @@ input {
   background-color: rgb(211, 211, 211);
   padding: 1rem;
   width: 22rem;
+}
+button {
+  background-color: rgb(211, 211, 211);
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  width: 5rem;
+  height: 3.4rem;
+}
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    background-color: rgb(188, 188, 188);
 }

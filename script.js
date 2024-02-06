@@ -6,7 +6,7 @@ function Color(r, g, b, a) {
 }
 
 Color.prototype.rgb = function () {
-  return `rgb (${this.r}, ${this.g}, ${this.b})`;
+  return `rgb(${this.r}, ${this.g}, ${this.b})`;
 };
 
 Color.prototype.hex = function () {
@@ -31,14 +31,14 @@ document.querySelector("form").addEventListener("submit", function (e) {
   e.preventDefault();
 
   const value = document.getElementById("colorInput").value.trim();
-  const values = value.split(" ").map((val) => parseFloat(val));
+  const values = value.split(" ");
   if (values.length > 4 || values.length < 3) {
     alert("invalid color");
   } else {
     for (let i = 0; i < values.length; i++) {
-      if (values[i] > 255) {
+      if (values[i] > 255 || values[i] < 0) {
         alert("invalid color");
-        return
+        return;
       }
     }
     displayColor(new Color(values[0], values[1], values[2], values[3] || 1));
@@ -46,5 +46,5 @@ document.querySelector("form").addEventListener("submit", function (e) {
 });
 
 function displayColor(color) {
-    document.body.style.backgroundColor = color.rgba();
+  document.body.style.backgroundColor = color.rgba();
 }
