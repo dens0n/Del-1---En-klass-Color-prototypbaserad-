@@ -33,11 +33,11 @@ document.querySelector("form").addEventListener("submit", function (e) {
   const value = document.getElementById("colorInput").value.trim();
   const values = value.split(" ");
   if (values.length > 4 || values.length < 3) {
-    alert("invalid color");
+    alert("invalid input");
   } else {
     for (let i = 0; i < values.length; i++) {
       if (values[i] > 255 || values[i] < 0) {
-        alert("invalid color");
+        alert("invalid input");
         return;
       }
     }
