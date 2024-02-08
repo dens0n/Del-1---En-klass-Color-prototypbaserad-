@@ -2,7 +2,7 @@ function Color(r, g, b, a) {
     this.r = r;
     this.g = g;
     this.b = b;
-    this.a = a;
+    this.a = a || 1;
 }
 
 Color.prototype.rgb = function () {
@@ -20,6 +20,10 @@ Color.prototype.hex = function () {
 Color.prototype.rgba = function () {
     return `rgba(${this.r}, ${this.g}, ${this.b}, ${this.a})`;
 };
+const color1 = new Color(100, 100, 100, 50);
+console.log(color1.rgb());
+console.log(color1.hex());
+console.log(color1.rgba());
 
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
