@@ -27,19 +27,18 @@ document.querySelector("form").addEventListener("submit", function (e) {
     const values = value.split(" ");
     const color = new Color(values[0], values[1], values[2], values[3] || 1);
 
-    console.log(color.rgb());
-    console.log(color.hex());
-    console.log(color.rgba());
-
     if (values.length > 4 || values.length < 3) {
         alert("invalid input");
     } else {
         for (let i = 0; i < values.length; i++) {
-            if (values[i] > 255 || values[i] < 0) {
+            if (values[i] > 255 || values[i] < 0 || values[3] > 1) {
                 alert("invalid input");
                 return;
             }
         }
+        console.log(color.rgb());
+        console.log(color.hex());
+        console.log(color.rgba());
         displayColor(color);
     }
 });
