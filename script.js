@@ -20,10 +20,10 @@ Color.prototype.hex = function () {
 Color.prototype.rgba = function () {
     return `rgba(${this.r}, ${this.g}, ${this.b}, ${this.a})`;
 };
-const color1 = new Color(100, 100, 100, 50);
-console.log(color1.rgb());
-console.log(color1.hex());
-console.log(color1.rgba());
+const color = new Color(100, 100, 100, 50);
+console.log(color.rgb());
+console.log(color.hex());
+console.log(color.rgba());
 
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
